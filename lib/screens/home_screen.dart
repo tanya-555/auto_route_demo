@@ -8,6 +8,10 @@ class HomeScreen extends StatelessWidget {
     AppRouter.navigator.pushNamed(AppRouter.secondScreen);
   }
 
+  void _navigateToThirdScreen(BuildContext context)  {
+    AppRouter.navigator.pushNamed(AppRouter.thirdScreen);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,20 +22,42 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            SizedBox(
-              height: 70,
-              width: 200,
-              child: ElevatedButton(
-                child: Text('Second Screen'),
-                onPressed: () {_navigateToSecondScreen(context);},
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SizedBox(
+                  height: 70,
+                  width: 150,
+                  child: ElevatedButton(
+                    child: Text('Second Screen'),
+                    onPressed: () {_navigateToSecondScreen(context);},
+                  ),
+                ),
+                SizedBox(
+                  height: 70,
+                  width: 150,
+                  child: ElevatedButton(
+                    child: Text('Third Screen'),
+                    onPressed: () {_navigateToThirdScreen(context);},
+                  ),
+                ),
+              ],
             ),
-            SizedBox(
-              height: 70,
-              width: 200,
-              child: ElevatedButton(
-                child: Text('Third Screen'),
-                onPressed: () {_navigateToSecondScreen(context);},
+            Container(
+              child: Column(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(10),
+                    child: TextField(
+                      decoration: InputDecoration(
+                          labelText: 'Enter text'
+                      ),
+                    ),
+                  ),
+                  ElevatedButton(
+                    child: Text('Submit'),
+                  ),
+                ],
               ),
             ),
           ],
