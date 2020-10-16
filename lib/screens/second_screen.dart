@@ -1,7 +1,13 @@
+import 'package:auto_route_demo/routes/router.gr.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SecondScreen extends StatelessWidget {
+
+  void _goBackToHome(BuildContext context) {
+    AppRouter.navigator.pop();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -9,12 +15,35 @@ class SecondScreen extends StatelessWidget {
         title: Text('Second Screen'),
       ),
       body: Container(
-        child: Text('You are on second screen!'),
         decoration: BoxDecoration(
-            color: Colors.yellow
+          color: Colors.yellowAccent,
+        ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Container(
+                child: Text('You are on second screen!',
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
+                ),
+              ),
+              SizedBox(
+                height: 50,
+                width: 200,
+                child: ElevatedButton(
+                  child: Text('Go Back'),
+                  onPressed: () {
+                    _goBackToHome(context);
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
-  
 }

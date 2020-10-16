@@ -16,11 +16,23 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            RaisedButton(
-              child: Text('Second Screen'),
-              color: Colors.yellowAccent,
-              onPressed: () {_navigateToSecondScreen(context);},
+            SizedBox(
+              height: 70,
+              width: 200,
+              child: ElevatedButton(
+                child: Text('Second Screen'),
+                onPressed: () {_navigateToSecondScreen(context);},
+              ),
+            ),
+            SizedBox(
+              height: 70,
+              width: 200,
+              child: ElevatedButton(
+                child: Text('Third Screen'),
+                onPressed: () {_navigateToSecondScreen(context);},
+              ),
             ),
           ],
         ),
