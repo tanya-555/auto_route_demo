@@ -1,4 +1,3 @@
-import 'package:auto_route_demo/routes/router.gr.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -6,16 +5,16 @@ class HomeScreen extends StatelessWidget {
   var textController = TextEditingController();
 
   void _navigateToSecondScreen(BuildContext context)  {
-    SampleAppRouter.navigator.pushNamed(SampleAppRouter.secondScreen);
+    //SampleAppRouter.navigator.pushNamed(SampleAppRouter.secondScreen);
   }
 
   void _navigateToThirdScreen(BuildContext context)  {
-    SampleAppRouter.navigator.pushNamed(SampleAppRouter.thirdScreen);
+    //SampleAppRouter.navigator.pushNamed(SampleAppRouter.thirdScreen);
   }
 
   void _submitData() {
     if(textController.text.isNotEmpty) {
-      SampleAppRouter.navigator.pushNamed(SampleAppRouter.displayScreen);
+      //SampleAppRouter.navigator.pushNamed(SampleAppRouter.displayScreen);
     }
   }
 

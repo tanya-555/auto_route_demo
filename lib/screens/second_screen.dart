@@ -1,11 +1,10 @@
-import 'package:auto_route_demo/routes/router.gr.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SecondScreen extends StatelessWidget {
 
   void _goBackToHome(BuildContext context) {
-    SampleAppRouter.navigator.pop();
+    //SampleAppRouter.navigator.pop();
   }
 
   @override
