@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class SecondScreen extends StatelessWidget {
 
   void _goBackToHome(BuildContext context) {
-    AppRouter.navigator.pop();
+    SampleAppRouter.navigator.pop();
   }
 
   @override

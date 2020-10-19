@@ -1,15 +1,22 @@
 import 'package:auto_route_demo/routes/router.gr.dart';
 import 'package:flutter/material.dart';
 
-
 class HomeScreen extends StatelessWidget {
 
+  var textController = TextEditingController();
+
   void _navigateToSecondScreen(BuildContext context)  {
-    AppRouter.navigator.pushNamed(AppRouter.secondScreen);
+    SampleAppRouter.navigator.pushNamed(SampleAppRouter.secondScreen);
   }
 
   void _navigateToThirdScreen(BuildContext context)  {
-    AppRouter.navigator.pushNamed(AppRouter.thirdScreen);
+    SampleAppRouter.navigator.pushNamed(SampleAppRouter.thirdScreen);
+  }
+
+  void _submitData() {
+    if(textController.text.isNotEmpty) {
+      SampleAppRouter.navigator.pushNamed(SampleAppRouter.displayScreen);
+    }
   }
 
   @override
@@ -49,6 +56,10 @@ class HomeScreen extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.all(10),
                     child: TextField(
+                      onSubmitted: (_) {
+                        _submitData();
+                      },
+                      controller: textController,
                       decoration: InputDecoration(
                           labelText: 'Enter text'
                       ),

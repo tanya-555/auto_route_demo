@@ -8,9 +8,9 @@ class DemoApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Auto Route Demo',
-      initialRoute: AppRouter.homeScreen,
-      navigatorKey: AppRouter.navigatorKey,
-      onGenerateRoute: AppRouter.onGenerateRoute,
+      initialRoute: SampleAppRouter.homeScreen,
+      navigatorKey: SampleAppRouter.navigatorKey,
+      onGenerateRoute: SampleAppRouter.onGenerateRoute,
     );
   }
 }
