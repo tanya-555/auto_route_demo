@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:auto_route_demo/routes/router.gr.dart';
 import 'package:flutter/material.dart';
 
@@ -6,16 +7,17 @@ class HomeScreen extends StatelessWidget {
   var textController = TextEditingController();
 
   void _navigateToSecondScreen(BuildContext context)  {
-    SampleAppRouter.navigator.pushNamed(AppRoute.secondScreen);
+    ExtendedNavigator.of(context).pushNamed(AppRoute.secondScreen);
   }
 
   void _navigateToThirdScreen(BuildContext context)  {
-    SampleAppRouter.navigator.pushNamed(AppRoute.thirdScreen);
+    ExtendedNavigator.of(context).pushNamed(AppRoute.thirdScreen);
   }
 
-  void _submitData() {
+  void _submitData(BuildContext context) {
     if(textController.text.isNotEmpty) {
-      SampleAppRouter.navigator.pushNamed(AppRoute.displayScreen);
+      ExtendedNavigator.of(context).pushNamed(AppRoute.displayScreen,
+          arguments: DisplayScreenArguments(receivedText: textController.text));
     }
   }
 
@@ -56,9 +58,9 @@ class HomeScreen extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.all(10),
                     child: TextField(
-                      onSubmitted: (_) {
-                        _submitData();
-                      },
+                      // onSubmitted: (_) {
+                      //   _submitData(context);
+                      // },
                       controller: textController,
                       decoration: InputDecoration(
                           labelText: 'Enter text'
@@ -67,6 +69,9 @@ class HomeScreen extends StatelessWidget {
                   ),
                   ElevatedButton(
                     child: Text('Submit'),
+                    onPressed: () {
+                      _submitData(context);
+                    },
                   ),
                 ],
               ),
