@@ -1,6 +1,6 @@
 # auto_route_demo
 
-A new Flutter application.
+Demonstrate working of auto route
 
 ## Getting Started
 
