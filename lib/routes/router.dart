@@ -5,7 +5,7 @@ import 'package:auto_route_demo/screens/home_screen.dart';
 import 'package:auto_route_demo/screens/second_screen.dart';
 import 'package:auto_route_demo/screens/third_screen.dart';
 
-@MaterialAutoRouter()
+@MaterialAutoRouter(routesClassName: 'AppRoute', routePrefix: '/app/')
 class $SampleAppRouter {
 
   @initial
